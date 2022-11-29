@@ -50,7 +50,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Open live demo](https://kweeka1.github.io/math-magicians/dist/)
+- [Open live demo](https://kweeka1.github.io/math-magicians/build/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
