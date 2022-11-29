@@ -15,29 +15,24 @@ const padItems = [
   { sym: '.', class: 'point' }, { sym: '=', class: 'operation' },
 ];
 
-class Calculator extends React.Component {
-  render() {
-    const { screenText, calculate } = this.props;
-    return (
-      <>
-        <div className="screen">{screenText}</div>
-        <div className="pad">
-          {
-            padItems.map((sym) => (
-              <div
-                role="presentation"
-                key={sym.sym}
-                onClick={(ev) => calculate(ev)}
-                className={sym.class}
-              >
-                {sym.sym}
-              </div>
-            ))
-          }
-        </div>
-      </>
-    );
-  }
-}
+const Calculator = ({ screenText, calculate }) => (
+  <>
+    <div className="screen">{screenText}</div>
+    <div className="pad">
+      {
+        padItems.map((sym) => (
+          <div
+            role="presentation"
+            key={sym.sym}
+            onClick={(ev) => calculate(ev)}
+            className={sym.class}
+          >
+            {sym.sym}
+          </div>
+        ))
+      }
+    </div>
+  </>
+);
 
 export default Calculator;
