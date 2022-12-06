@@ -16,23 +16,24 @@ const padItems = [
 ];
 
 const Calculator = ({ screenText, calculate }) => (
-  <>
+  <div className="calculator">
+    <h1 className="calculator-title">Lets do some math</h1>
     <div className="screen">{screenText}</div>
     <div className="pad">
       {
-        padItems.map((sym) => (
+        padItems.map((item) => (
           <div
             role="presentation"
-            key={sym.sym}
-            onClick={(ev) => calculate(ev)}
-            className={sym.class}
+            key={item.sym}
+            onClick={() => calculate(item.sym)}
+            className={item.class}
           >
-            {sym.sym}
+            {item.sym}
           </div>
         ))
       }
     </div>
-  </>
+  </div>
 );
 
 export default Calculator;

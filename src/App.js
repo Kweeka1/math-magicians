@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import './App.scss';
-import Calculator from './Components/Calculator/Calculator';
+import { Routes, Route } from 'react-router-dom';
+import Calculator from './Pages/Calculator/Calculator';
 import calculate from './Utils/calculate';
+import Header from './Components/Header/Header';
+import Home from './Pages/Home/Home';
+import Quotes from './Pages/Quotes/Quotes';
 
-// eslint-disable-next-line react/prefer-stateless-function
 const App = () => {
   const [params, setParams] = useState({
     total: null,
@@ -11,16 +14,26 @@ const App = () => {
     operation: null,
   });
 
-  const handleClick = (ev) => {
-    setParams((prevState) => calculate(prevState, ev.target.textContent));
+  const handleClick = (item) => {
+    setParams((prevState) => calculate(prevState, item));
+    if (params.total && item === '.') {
+      setParams((prevState) => ({ ...prevState, total: null }));
+    }
   };
 
   const { total, next, operation } = params;
   const screenText = `${total ?? ''} ${operation ?? ''} ${next ?? ''}`;
   return (
-    <div className="App">
-      <Calculator screenText={screenText} calculate={(ev) => handleClick(ev)} />
-    </div>
+    <>
+      <Header />
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/quotes" element={<Quotes />} />
+          <Route path="/calculator" element={<Calculator screenText={screenText} calculate={(item) => handleClick(item)} />} />
+        </Routes>
+      </div>
+    </>
   );
 };
 
