@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.scss';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import Calculator from './Pages/Calculator/Calculator';
 import calculate from './Utils/calculate';
 import Header from './Components/Header/Header';
@@ -24,7 +24,7 @@ const App = () => {
   const { total, next, operation } = params;
   const screenText = `${total ?? ''} ${operation ?? ''} ${next ?? ''}`;
   return (
-    <>
+    <BrowserRouter>
       <Header />
       <div className="App">
         <Routes>
@@ -33,7 +33,7 @@ const App = () => {
           <Route path="/calculator" element={<Calculator screenText={screenText} calculate={(item) => handleClick(item)} />} />
         </Routes>
       </div>
-    </>
+    </BrowserRouter>
   );
 };
 
