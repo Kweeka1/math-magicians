@@ -1,3 +1,5 @@
+<a name="readme-top"></a>
+
 <!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
@@ -26,7 +28,7 @@
 
 # 📖 Math Magicians <a name="about-project"></a>
 
-**Math magicians** is a calculator app that does basic arithmetic operations.
+**Math Magicians** is a simple calculator app that lets you perform basic arithmetic operations such as addition, subtraction, multiplication, and division. With an easy-to-use interface, you can quickly get the answers to all your mathematical problems with ease.
 
 ## 🛠 Built With <a name="built-with"></a>
 
